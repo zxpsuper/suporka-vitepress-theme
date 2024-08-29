@@ -6,6 +6,10 @@ const pageSize = 10;
 export default defineConfig({
   title: "suporka-vitepress-theme",
   description: "A simple and beautiful vitepress theme",
+  appearance: false,
+  rewrites: {
+    'posts/(.*)': '(.*)'
+  },
   themeConfig: {
     posts: await getPosts(pageSize),
     website: "https://github.com/zxpsuper/suporka-vitepress-theme", //copyright link
@@ -21,10 +25,8 @@ export default defineConfig({
     },
     nav: [
       { text: "Home", link: "/" },
-      // { text: "Category", link: "/pages/category" },
       { text: "Archives", link: "/pages/archives" },
       { text: "Tags", link: "/pages/tags" },
-      // { text: 'Airene', link: 'http://airene.net' }  -- External link test
     ],
     search: {
       provider: "local",

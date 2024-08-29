@@ -22,12 +22,13 @@ async function getPosts(pageSize: number) {
             }
             return {
                 frontMatter: data,
-                regularPath: `/${item.replace('.md', '.html')}`
+                regularPath: `/${item.replace('.md', '.html').replace('posts/', '')}`
             }
         })
     )
     posts.sort(_compareDate as any)
     
+    console.log(posts)
     return posts
 }
 
