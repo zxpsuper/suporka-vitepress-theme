@@ -1,5 +1,5 @@
 <template>
-  <div v-for="yearList in data">
+  <div v-for="yearList in data" class="year-container">
       <div class="year">
           {{ yearList[0].frontMatter.date.split('-')[0] }}
       </div>
@@ -36,4 +36,5 @@ onMounted(() => {
   font-weight: 500;
   font-family: var(--date-font-family),serif;
 }
+
 </style>

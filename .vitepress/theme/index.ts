@@ -11,7 +11,7 @@ import Comment from "./components/Comment.vue";
 import './custom.css'
 
 export default {
-  ...DefaultTheme,
+  // ...DefaultTheme,
   Layout: NewLayout,
   enhanceApp({ app, router, siteData }) {
     // ...
@@ -20,5 +20,6 @@ export default {
     app.component("Archives", Archives);
     app.component("Page", Page);
     app.component("Comment", Comment);
+    console.log(DefaultTheme)
   },
 } satisfies Theme;

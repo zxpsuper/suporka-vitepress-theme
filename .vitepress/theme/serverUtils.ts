@@ -14,7 +14,6 @@ async function getPosts(pageSize: number) {
             const content = await fs.readFile(item, 'utf-8')
             const {data, content: fileContent} = matter(content)
             data.date = _convertDate(data.date)
-            console.log(data)
             if (!data.description) {
               const hasMore = fileContent.indexOf('<!-- more -->')
               if (hasMore !== -1) {
